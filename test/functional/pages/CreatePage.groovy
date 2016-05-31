@@ -6,7 +6,7 @@ class CreatePage extends Page {
     static url = "/ExemploDaAulaDeTestes/vaga/create/"
 
     static at =  {
-        title ==~ /Criar Vaga/
+        title ==~ /Create Vaga/
     }
 
     boolean criarVaga(vaga) {

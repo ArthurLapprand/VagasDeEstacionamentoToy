@@ -6,7 +6,7 @@ class Visualizacao extends Page {
     static url = "/ExemploDaAulaDeTestes/vaga/overview/"
 
     static at =  {
-        title ==~ /Vaga Listagem/
+        title ==~ /Vaga List/
     }
 
     boolean vagaEstaVazia(vaga) {
