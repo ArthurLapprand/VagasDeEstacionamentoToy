@@ -33,10 +33,4 @@ class CriterionTestDataAndOperations {
         controller.params << [description: desc]
         return controller.retrieveCriterion()
     }
-
-    public static List<Criterion> getCriteriaList() {
-        def controller = new CriterionController()
-        return controller.getCriteriaList()
-    }
-
 }
