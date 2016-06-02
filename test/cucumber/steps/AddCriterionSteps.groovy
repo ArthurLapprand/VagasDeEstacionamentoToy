@@ -51,7 +51,9 @@ When I create the criterion "P1"
 Then system does nothing
 */
 Given(~'^the criterion named "([^"]*)" already exists on the system$') {
-    String desc -> assert CriterionTestDataAndOperations.getCriterion(desc) != null
+    String desc ->
+        CriterionTestDataAndOperations.createCriterion(desc)
+        assert CriterionTestDataAndOperations.getCriterion(desc) != null
         tempDesc = desc
 }
 
@@ -76,23 +78,22 @@ Given(~'^the criterion "([^"]*)" already exists$') {
         to CreateCriterionPage
         at CreateCriterionPage
         page.createCriterion(desc)
-        to ShowCriterionPage
-        at ShowCriterionPage
 }
 
 And(~'^I am on the Add Criterion page$') { ->
-    //to CreateCriterionPage
-    //at CreateCriterionPage
+    to CreateCriterionPage
+    at CreateCriterionPage
 }
 
 When(~'^I add the criterion "([^"]*)"$') {
-    //String desc ->
-        //at CreateCriterionPage
-        //page.createCriterion(desc)
+    String desc ->
+        at CreateCriterionPage
+        page.createCriterion(desc)
 }
 
 Then(~'^I should see a message related to the criterion registration failure$') { ->
-    //assert CreateCriterionPage
+    at CreateCriterionPage
+    assert page.checkForErrors()
 }
 
 /*
